@@ -1,15 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>skywalker</groupId>
+    <groupId>cn.cqy</groupId>
     <artifactId>spring</artifactId>
-    <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>spring Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>context-core-learning</module>
+    </modules>
+    <name>spring-learning-analysis</name>
     <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-version>4.3.18.RELEASE</spring-version>
+        <spring-version>5.3.8</spring-version>
     </properties>
     <dependencies>
         <dependency>
