@@ -76,8 +76,7 @@
    
 10. org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization
     完成beanFactory初始化
-    
-11. org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons
+    其中有一步是org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons
     初始化非lazy的单例bean,这里面的内容和getBean方法相似,放在getBean中进行说明
 
 #### 第二点五层 对loadBeanDefinitions的一个详细解析
