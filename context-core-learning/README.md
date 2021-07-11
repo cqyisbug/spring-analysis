@@ -91,3 +91,18 @@
     再往下 ```org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(org.w3c.dom.Element, org.springframework.beans.factory.config.BeanDefinition)``` 看到了  
 这里不会再做过多的解释了,parser都已经找到了,这些beanDefinition已经注册进去了,如何执行是下几节要说的事情.
    
+### 第三层 getBean 方法解析
+其实这个方法挺重要的,spring处理循环依赖,beanFactory的处理都在这里.
+1. org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean
+   transformedBeanName 是为了处理alias的情况
+   
+2. org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(java.lang.String) 这个方法在第一次实例化时总是会返回null,因为并没有被实例化过
+
+3. 优先从 parentBeanFactory 找相应bean,如果找到了就直接返回
+
+4. 创建bean核心方法 org.springframework.beans.factory.support.AbstractBeanFactory.createBean
+    1. 解析beanClass
+    2. org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation 触发 InstantiationAwareBeanPostProcessor 
+    3. 触发 MergedBeanDefinitionPostProcessor
+    4. 填充bean property
+   
