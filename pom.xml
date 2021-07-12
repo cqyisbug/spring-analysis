@@ -7,6 +7,7 @@
     <version>1.0</version>
     <modules>
         <module>context-core-learning</module>
+        <module>dynamic-proxy</module>
     </modules>
     <name>spring-learning-analysis</name>
     <properties>
