@@ -5,7 +5,7 @@ import cn.cqy.proxy.service.UserService;
 import java.lang.reflect.Proxy;
 
 /**
- * Created on 2021/7/12.
+ * 这个测试主要是想用注解去实现代理内部的方法,这样的话对于理解spring的factory bean很有好处
  *
  * @author caiqiyuan
  */
