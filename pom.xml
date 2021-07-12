@@ -8,6 +8,7 @@
     <modules>
         <module>context-core-learning</module>
         <module>dynamic-proxy</module>
+        <module>factory-bean</module>
     </modules>
     <name>spring-learning-analysis</name>
     <properties>
