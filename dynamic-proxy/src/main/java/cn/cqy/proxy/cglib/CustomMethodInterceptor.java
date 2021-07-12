@@ -1,5 +1,6 @@
 package cn.cqy.proxy.cglib;
 
+import cn.cqy.proxy.annotation.MethodHelper;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
@@ -15,7 +16,11 @@ public class CustomMethodInterceptor implements MethodInterceptor {
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("before");
-        Object result =methodProxy.invokeSuper(o, objects);
+        MethodHelper methodHelper = method.getAnnotation(MethodHelper.class);
+        if (methodHelper != null && !methodHelper.value().isEmpty()) {
+            System.out.println("i like " + methodHelper.value());
+        }
+        Object result = methodProxy.invokeSuper(o, objects);
         System.out.println("after");
         return result;
     }
